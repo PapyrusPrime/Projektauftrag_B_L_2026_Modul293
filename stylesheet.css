@@ -608,7 +608,7 @@ body.contact-page {
 
 /* Titel */
 body.contact-page .about-title-container {
-    display: block !important;
+    display: block;
     text-align: center;
     margin-top: 20px;
 }
@@ -727,7 +727,7 @@ body.contact-page {
 
 /* Titel "Kontakt" anzeigen */
 body.contact-page .about-title-container {
-    display: block !important;
+    display: block;
     text-align: center;
     margin-top: 20px;
 }
@@ -1045,4 +1045,14 @@ body.portfolio-page .about-title {
     .footer-section.linkedin  { grid-column: 2; grid-row: 1; }
     .footer-section.email     { grid-column: 1; grid-row: 2; }
     .footer-section.copyright { grid-column: 2; grid-row: 2; }
+}
+@media (max-width: 900px) {
+    body.contact-page .about-title {
+        font-size: clamp(1.5rem, 6vw, 2.2rem);
+        padding: 10px 0;
+    }
+
+    body.contact-page .about-title-container {
+        padding: 10px 0;
+    }
 }
