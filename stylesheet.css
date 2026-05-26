@@ -1056,3 +1056,23 @@ body.portfolio-page .about-title {
         padding: 10px 0;
     }
 }
+@media (max-width: 900px) {
+    body.contact-page .contact-layout {
+        padding: 10px 15px;   /* viel schmaler */
+        gap: 20px;            /* weniger Abstand */
+    }
+
+    body.contact-page .contact-form,
+    body.contact-page .contact-info {
+        padding: 10px;        /* Boxen schmaler */
+    }
+}
+@media (max-width: 900px) {
+    body.contact-page .about-title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    body.contact-page .about-title-container {
+        padding: 10px 0;
+    }
+}
