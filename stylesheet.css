@@ -198,14 +198,29 @@ body {
     text-align: center;
 }
 
-.skills-left {
-    background-color: #C8D8E4;
+.skills-list li {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    margin: 10px auto;
+    border-radius: 999px; /* macht die Box oval */
+    width: auto; /* passt sich dem Text an */
+    max-width: 90%; /* verhindert zu breite Boxen */
+    text-align: center;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
 }
 
-.skills-right {
+.skills-left .skills-list li {
     background-color: #2B6777;
     color: #fff;
 }
+
+.skills-right .skills-list li {
+    background-color: #C8D8E4;
+    color: #000;
+}
+
 
 .skills-title {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
@@ -217,23 +232,6 @@ body {
     list-style: none;
 }
 
-.skills-left .skills-list li {
-    background-color: #2B6777;
-    color: #fff;
-    padding: 1.8%;
-    border-radius: 50%;
-    margin: 1.2% auto;
-    width: 50%;
-}
-
-.skills-right .skills-list li {
-    background-color: #C8D8E4;
-    color: #000;
-    padding: 1.8%;
-    border-radius: 50%;
-    margin: 1.2% auto;
-    width: 50%;
-}
 
 /* MOBILE SKILLS */
 @media (max-width: 900px) {
@@ -649,21 +647,14 @@ body.contact-page .contact-layout {
 html, body {
     background-color: #ffffff !important;
 }
-/* Titelsteuerung pro Seite */
-body.index-page .about-title-container {
-    display: none !important;
-}
 
-body.skills-page .about-title-container,
-body.portfolio-page .about-title-container,
-body.contact-page .about-title-container {
-    display: block !important;
-    text-align: center !important;
-}
+
+
 /* Index: Titel ausblenden */
 body.index-page .about-title-container {
     display: none !important;
 }
+
 
 /* Kontakt: Titel zentrieren */
 body.contact-page .about-layout {
@@ -677,3 +668,5 @@ body.contact-page .about-title-container {
     display: block !important;
     text-align: center !important;
 }
+
+
