@@ -1022,9 +1022,13 @@ body.contact-page .about-title {
     }
 }
 @media (max-width: 900px) {
-    .about-text-container,
+    .about-text-container {
+        text-align: center !important;
+    }
+
     .about-text {
-        text-align: center;
-        white-space: normal;
+        white-space: normal !important;
+        text-align: center !important;
     }
 }
+
