@@ -584,6 +584,33 @@ body.contact-page .contact-form button {
     .footer-section.email     { grid-column: 1; grid-row: 2; }
     .footer-section.copyright { grid-column: 2; grid-row: 2; }
 }
+@media (max-width: 900px) {
+
+    .footer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        text-align: center;
+        gap: 10px;
+        padding: 20px 10px;
+    }
+
+    .footer-section {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-section h1,
+    .footer-section h2 {
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    }
+
+    .footer-section.linkedin img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
 /* ---------------------------------------------------
    WEISSER TITELBEREICH FÜR ALLE SEITEN
 --------------------------------------------------- */
