@@ -628,3 +628,10 @@ body.contact-page .about-title {
     background-color: #ffffff !important;
     color: #000000 !important;
 }
+@media (max-width: 900px) {
+    body.contact-page .contact-form {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px;
+    }
+}
