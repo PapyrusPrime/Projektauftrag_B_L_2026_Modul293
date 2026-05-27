@@ -606,18 +606,7 @@ body.contact-page {
     background-color: #C8D8E4; /* Hellblau */
 }
 
-/* Titel */
-body.contact-page .about-title-container {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-}
 
-body.contact-page .about-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    background-color: transparent;
-    color: #000000;
-}
 
 /* Hauptlayout */
 body.contact-page .contact-layout {
@@ -717,35 +706,7 @@ body.contact-page .contact-form button {
         text-align: center;
     }
 }
-/* ---------------------------------------------------
-   KONTAKTSEITE – HINTERGRUND & TITEL
---------------------------------------------------- */
 
-body.contact-page {
-    background-color: #C8D8E4; /* Hellblau */
-}
-
-/* Titel "Kontakt" anzeigen */
-body.contact-page .about-title-container {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-}
-
-body.contact-page .about-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    background-color: transparent;
-    color: #000000;
-}
-
-/* Hauptlayout: Infos links, Formular rechts */
-body.contact-page .contact-layout {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 60px;
-    padding: 40px 60px;
-}
 
 /* Linke Kontaktinfos – ohne Box, nur Text */
 body.contact-page .contact-info {
@@ -906,66 +867,17 @@ body.contact-page .contact-form button:hover {
         margin-top: 10px;
     }
 }
-/* ---------------------------------------------------
-   KONTAKTSEITE – TITEL WEISS & ZENTRIERT
---------------------------------------------------- */
-
-body.contact-page .about-title-container {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;   /* WEISSER HINTERGRUND */
-    padding: 20px 0;
-    margin-top: 0;
-    width: 100%;
-}
-
-body.contact-page .about-title {
-    background-color: #ffffff !important; /* verhindert Überschreiben */
-    color: #000000;
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin: 0;
-    text-align: center;
-}
-/* ---------------------------------------------------
-   KONTAKTSEITE – TITEL FIX (HELLBLAUER BALKEN WEG)
---------------------------------------------------- */
-
-body.contact-page .about-title-container {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;   /* Weißer Hintergrund */
-    padding: 25px 0;           /* Abstand oben & unten */
-    margin: 0;                 /* Kein Abstand nach oben */
-    width: 100%;
-}
-
-body.contact-page .about-title {
-    background-color: #ffffff !important;
-    color: #000000;
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin: 0;
-    text-align: center;
-}
-
-@media (max-width: 900px){
-    .contact-info
-    {
-        display: none;
-    }
-}
 
 /* ---------------------------------------------------
    SKILLS-SEITE – TITEL HINTERGRUND WEISS FIX
 --------------------------------------------------- */
 
 body.skills-page .about-title-container {
-    background-color: #ffffff !important;
+    background-color: #ffffff;
 }
 
 body.skills-page .about-title {
-    background-color: #ffffff !important;
+    background-color: #ffffff;
     color: #000000;
 }
 /* ---------------------------------------------------
@@ -974,25 +886,18 @@ body.skills-page .about-title {
 
 /* PORTFOLIO-SEITE – TITEL KOMPAKT & WEISS */
 body.portfolio-page .about-title-container {
-    background-color: #ffffff !important;
+    background-color: #ffffff;
     padding: 10px 0;      /* kleiner Abstand */
     margin: 0 !important; /* entfernt den oberen Abstand */
 }
 
 body.portfolio-page .about-title {
-    background-color: #ffffff !important;
+    background-color: #ffffff;
     color: #000000;
     font-size: clamp(2rem, 5vw, 3rem);
     margin: 0;
     text-align: center;
 }
-/* ---------------------------------------------------
-   FOOTER – EINHEITLICH FÜR ALLE SEITEN
---------------------------------------------------- */
-
-/* ---------------------------------------------------
-   FOOTER – EINHEITLICH FÜR ALLE SEITEN
---------------------------------------------------- */
 
 /* ---------------------------------------------------
    FOOTER – EINHEITLICH FÜR ALLE SEITEN
@@ -1074,5 +979,52 @@ body.portfolio-page .about-title {
 
     body.contact-page .about-title-container {
         padding: 10px 0;
+    }
+}
+@media (max-width: 900px) {
+    body.contact-page .about-title-container {
+        padding: 8px 0;
+        background-color: #ffffff;
+    }
+
+    body.contact-page .about-title {
+        font-size: clamp(1.3rem, 5vw, 1.8rem);
+        margin: 0;
+        padding: 0;
+    }
+}
+/* Kontaktseite – Titel Desktop */
+body.contact-page .about-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px 0;
+    margin: 0;
+    width: 100%;
+}
+
+body.contact-page .about-title {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0;
+    text-align: center;
+}@media (max-width: 900px) {
+    body.contact-page .about-title-container {
+        padding: 8px 0 !important;
+    }
+
+    body.contact-page .about-title {
+        font-size: clamp(1.3rem, 5vw, 1.8rem) !important;
+        padding: 0;
+        margin: 0;
+    }
+}
+@media (max-width: 900px) {
+    .about-text-container,
+    .about-text {
+        text-align: center;
+        white-space: normal;
     }
 }
