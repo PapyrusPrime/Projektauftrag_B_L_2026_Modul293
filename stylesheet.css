@@ -112,7 +112,7 @@ body {
 }
 
 .about-title-container {
-    display: none;
+    display: block;
     text-align: center;
 }
 
@@ -447,7 +447,7 @@ body.portfolio-page .about-title {
    KONTAKTSEITE
 --------------------------------------------------- */
 body.contact-page {
-    background-color: #C8D8E4;
+    background-color: #ffffff;
 }
 
 body.contact-page .contact-layout {
@@ -628,10 +628,52 @@ body.contact-page .about-title {
     background-color: #ffffff !important;
     color: #000000 !important;
 }
+body.contact-page .about-title-container {
+    text-align: center !important;
+}
+
 @media (max-width: 900px) {
     body.contact-page .contact-form {
         display: flex !important;
         flex-direction: column !important;
         gap: 12px;
     }
+}
+body.contact-page {
+    background-color: #ffffff;
+}
+
+body.contact-page .contact-layout {
+    background-color: #C8D8E4;
+}
+html, body {
+    background-color: #ffffff !important;
+}
+/* Titelsteuerung pro Seite */
+body.index-page .about-title-container {
+    display: none !important;
+}
+
+body.skills-page .about-title-container,
+body.portfolio-page .about-title-container,
+body.contact-page .about-title-container {
+    display: block !important;
+    text-align: center !important;
+}
+/* Index: Titel ausblenden */
+body.index-page .about-title-container {
+    display: none !important;
+}
+
+/* Kontakt: Titel zentrieren */
+body.contact-page .about-layout {
+    justify-content: center !important;
+}
+
+/* Kontakt, Skills, Portfolio: Titel anzeigen */
+body.skills-page .about-title-container,
+body.portfolio-page .about-title-container,
+body.contact-page .about-title-container {
+    display: block !important;
+    text-align: center !important;
 }
