@@ -670,3 +670,20 @@ body.contact-page .about-title-container {
 }
 
 
+.skills-center {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none; /* optional, verhindert Hover-Probleme */
+}
+
+.skills-left,
+.skills-right {
+    padding-top: 60px; /* Abstand nach oben */
+    padding-bottom: 60px; /* Abstand nach unten */
+}
+@media (max-width: 900px) {
+    body.index-page .about-title-container {
+        display: block !important;
+    }
+}
