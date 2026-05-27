@@ -1,27 +1,28 @@
 /* ---------------------------------------------------
-   Grundstruktur
+   GRUNDSTRUKTUR
 --------------------------------------------------- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: inter, sans-serif;
     font-size: clamp(1rem, 2vw, 1.3rem);
-    display: block;
 }
-
 
 /* ---------------------------------------------------
    HEADER
 --------------------------------------------------- */
+.TitelDesctop {
+    display: block;
+}
 
 @media (max-width: 900px) {
-    .TitelDesctop
-{
-display: none;
-}
+    .TitelDesctop {
+        display: none;
+    }
 }
 
 .header-top {
@@ -58,73 +59,16 @@ display: none;
 
 .navigation-desktop a {
     text-decoration: none;
-    color: #000000;
+    color: #000;
     font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
-/* ---------------------------------------------------
-   ABOUT SECTION (Laptop)
---------------------------------------------------- */
-.about-layout {
-    display: flex;
-    width: 100%;
-}
-
-/* Standard: Titel ausgeblendet */
-.about-title-container {
-    display: none;
-    text-align: center;
-}
-
-.about-left {
-    background-color: #C8D8E4;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    padding: 40px 0;
-}
-
-.about-image {
-    width: 300px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 25%;
-}
-
-.about-text-container {
-    background-color: #2B6777;
-    width: 50%;
-    padding: 40px 50px;
-    color: #FFFFFF;
-    text-align: center;
-}
-
-.about-title {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: normal;
-    background-color: #C8D8E4;
-}
-
-.about-text {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    line-height: 1.8;
-    white-space: pre-line;
-}
-
-
-
-/* ---------------------------------------------------
-   MOBILE NAVIGATION
---------------------------------------------------- */
+/* MOBILE NAVIGATION */
 .navigation-mobile {
     display: none;
 }
 
-/* ---------------------------------------------------
-   MOBILE VERSION
---------------------------------------------------- */
 @media (max-width: 900px) {
-
     .header-top {
         flex-direction: column;
         gap: 10px;
@@ -154,10 +98,61 @@ display: none;
         padding: 10px 0;
         font-size: clamp(1rem, 3vw, 1.2rem);
         font-weight: bold;
-        color: #000000;
+        color: #000;
         text-decoration: none;
     }
+}
 
+/* ---------------------------------------------------
+   ABOUT SECTION
+--------------------------------------------------- */
+.about-layout {
+    display: flex;
+    width: 100%;
+}
+
+.about-title-container {
+    display: none;
+    text-align: center;
+}
+
+.about-left {
+    background-color: #C8D8E4;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.about-image {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 25%;
+}
+
+.about-text-container {
+    background-color: #2B6777;
+    width: 50%;
+    padding: 40px 50px;
+    color: #fff;
+    text-align: center;
+}
+
+.about-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: normal;
+    background-color: #C8D8E4;
+}
+
+.about-text {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+/* MOBILE ABOUT */
+@media (max-width: 900px) {
     .about-layout {
         flex-direction: column;
     }
@@ -176,35 +171,40 @@ display: none;
         width: 100%;
         padding: 10px 20px;
     }
+
+    .about-text-container {
+        text-align: center !important;
+    }
+
+    .about-text {
+        white-space: normal !important;
+        text-align: center !important;
+    }
 }
 
 /* ---------------------------------------------------
-   SKILLS-SEITE (NEU & KORREKT)
+   SKILLS – GRUNDSTRUKTUR
 --------------------------------------------------- */
-
 .skills-layout {
     display: flex;
     width: 100%;
-    min-height: auto;
     background-color: transparent;
-    padding: 0;
 }
 
-/* Linke Seite hellblau */
-.skills-left {
-    width: 50%;
-    background-color: #C8D8E4;
-    padding: 40px 0;
-    text-align: center;
-}
-
-/* Rechte Seite dunkelgrün */
+.skills-left,
 .skills-right {
     width: 50%;
-    background-color: #2B6777;
     padding: 40px 0;
     text-align: center;
-    color: #ffffff;
+}
+
+.skills-left {
+    background-color: #C8D8E4;
+}
+
+.skills-right {
+    background-color: #2B6777;
+    color: #fff;
 }
 
 .skills-title {
@@ -215,53 +215,28 @@ display: none;
 
 .skills-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
-/* Kästchen links = ROT */
 .skills-left .skills-list li {
-    background-color:  #2B6777;
-    color: #ffffff;
+    background-color: #2B6777;
+    color: #fff;
     padding: 1.8%;
     border-radius: 50%;
     margin: 1.2% auto;
     width: 50%;
 }
 
-
-
-/* Kästchen rechts = GELB */
 .skills-right .skills-list li {
     background-color: #C8D8E4;
-    color: #000000;
+    color: #000;
     padding: 1.8%;
     border-radius: 50%;
     margin: 1.2% auto;
     width: 50%;
 }
 
-/* ---------------------------------------------------
-   TITEL nur auf skills.html anzeigen
---------------------------------------------------- */
-
-body.skills-page .about-title-container {
-    display: block !important;
-    background-color: #ffffff;
-    padding: 10px 0 5px 0; /* oben 10px, unten 5px */
-}
-
-
-body.skills-page .about-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: #000000;
-}
-
-/* ---------------------------------------------------
-   MOBILE VERSION SKILLS
---------------------------------------------------- */
+/* MOBILE SKILLS */
 @media (max-width: 900px) {
-
     .skills-layout {
         flex-direction: column;
     }
@@ -277,67 +252,13 @@ body.skills-page .about-title {
         padding: 12px 30px;
     }
 }
-
-/* Skills-Seite: Nur Skills beeinflussen, NICHT Portfolio */
-body.skills-page .skills-layout {
-    flex-direction: row;
-}
-body.skills-page .skills-left,
-body.skills-page .skills-right {
-    width: 50%;
-}
-body.skills-page .about-title {
-    margin-bottom: 0 !important;
-}
-
-/* Bild in der Mitte */
-.skills-center {
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.skills-center-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #ffffff;
-}
-@media (max-width: 900px) {
-    .skills-center {
-        width: 100%;
-        margin: 20px 0;
-    }
-
-    .skills-center-image {
-        width: 120px;
-        height: 120px;
-    }
-}
-.skills-layout {
-    position: relative; /* wichtig für absolute Positionierung */
-}
-
-.skills-center-image {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* perfekt zentriert */
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid #ffffff; /* schöner Rand */
-    z-index: 10; /* liegt über beiden Blöcken */
-}
-
+/* ---------------------------------------------------
+   SKILLS – CENTER IMAGE
+--------------------------------------------------- */
 .skills-layout {
     position: relative;
 }
 
-/* Position des Kreises */
 .skills-center {
     position: absolute;
     left: 50%;
@@ -346,35 +267,37 @@ body.skills-page .about-title {
     z-index: 10;
 }
 
-/* Runder Hintergrund */
+.skills-center-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #fff;
+}
+
 .skills-center-bg {
-   
     width: clamp(80px, 12vw, 130px);
     height: clamp(80px, 12vw, 130px);
-    background-color: #ffffff; /* HIER FARBE WÄHLEN */
+    background-color: #fff;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
-/* Icon */
 .VideoIcon {
     width: clamp(40px, 7vw, 90px);
     height: clamp(40px, 7vw, 90px);
     object-fit: contain;
 }
 
-
-/* Tooltip */
-[data-tooltip] {
+/* Tooltip für das Kamera-Icon */
+.skills-center-bg[data-tooltip] {
     position: relative;
     cursor: pointer;
 }
 
-[data-tooltip]::after {
+.skills-center-bg[data-tooltip]::after {
     content: attr(data-tooltip);
     position: absolute;
     bottom: 120%;
@@ -392,15 +315,37 @@ body.skills-page .about-title {
     z-index: 20;
 }
 
-[data-tooltip]:hover::after {
+.skills-center-bg[data-tooltip]:hover::after {
     opacity: 1;
 }
 
-/*3 Seite*/
-/* ---------------------------------------------------
-   PORTFOLIO-SEITE
---------------------------------------------------- */
 
+
+/* SKILLS – Handy: trotzdem nebeneinander */
+@media (max-width: 900px) {
+    body.skills-page .skills-layout {
+        flex-direction: row !important;
+    }
+
+    body.skills-page .skills-left,
+    body.skills-page .skills-right {
+        width: 50% !important;
+        padding: 20px 0 !important;
+    }
+
+    body.skills-page .skills-center {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+    }
+}
+
+
+/* ---------------------------------------------------
+   PORTFOLIO
+--------------------------------------------------- */
 .portfolio-layout {
     width: 100%;
     padding: 40px 60px;
@@ -410,23 +355,20 @@ body.skills-page .about-title {
     background-color: #C8D8E4;
 }
 
-/* 1. Projekt: Bild links – Text rechts */
-.portfolio-item {
-    display: flex;
-    flex-direction: row; /* Bild links */
-    align-items: center;
-    gap: 40px;
-}
-
-
-/* 2. Projekt: Bild rechts – Text links */
+.portfolio-item,
 .portfolio-item-reverse {
     display: flex;
-    flex-direction: row-reverse; /* Bild rechts */
     align-items: center;
     gap: 40px;
 }
 
+.portfolio-item {
+    flex-direction: row;
+}
+
+.portfolio-item-reverse {
+    flex-direction: row-reverse;
+}
 
 .portfolio-image-wrapper {
     flex: 0 0 250px;
@@ -445,14 +387,13 @@ body.skills-page .about-title {
 .portfolio-text {
     flex: 1;
     background-color: #2B6777;
-    color: #ffffff;
+    color: #fff;
     padding: 25px 30px;
 }
 
 .portfolio-title {
     font-size: clamp(1.4rem, 3vw, 1.8rem);
     margin-bottom: 15px;
-    font-weight: normal;
 }
 
 .portfolio-description {
@@ -460,18 +401,12 @@ body.skills-page .about-title {
     line-height: 1.7;
 }
 
-/* Handy-Version */
+/* MOBILE PORTFOLIO */
 @media (max-width: 900px) {
-
     .portfolio-item,
     .portfolio-item-reverse {
-        flex-direction: column;
+        flex-direction: column !important;
         text-align: center;
-    }
-
-    .portfolio-image-wrapper {
-        width: 100%;
-        justify-content: center;
     }
 
     .portfolio-image {
@@ -486,129 +421,35 @@ body.skills-page .about-title {
 }
 
 /* ---------------------------------------------------
-   PORTFOLIO – SAUBER & ISOLIERT
+   PORTFOLIO – SEITENSPEZIFISCH
 --------------------------------------------------- */
-
 body.portfolio-page .about-layout,
 body.portfolio-page .about-left,
-body.portfolio-page .about-text-container,
-body.portfolio-page .about-title-container {
+body.portfolio-page .about-text-container {
     display: none !important;
 }
 
-/* Titel auf Portfolio-Seite anzeigen */
 body.portfolio-page .about-title-container {
     display: block !important;
+    background-color: #fff;
+    padding: 10px 0;
     text-align: center;
-    margin-top: 20px;
 }
 
-/* Portfolio-Layout */
-body.portfolio-page .portfolio-layout {
-    width: 100%;
-    padding: 40px 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    background-color: #C8D8E4;
-}
-
-/* Erstes Projekt: Bild links, Text rechts */
-body.portfolio-page .portfolio-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
-}
-
-/* Zweites Projekt: Bild rechts, Text links */
-body.portfolio-page .portfolio-item-reverse {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 40px;
-}
-
-/* Bild */
-body.portfolio-page .portfolio-image-wrapper {
-    flex: 0 0 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-body.portfolio-page .portfolio-image {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* Textbox */
-body.portfolio-page .portfolio-text {
-    flex: 1;
-    background-color: #2B6777;
-    color: #ffffff;
-    padding: 25px 30px;
-}
-
-body.portfolio-page .portfolio-title {
-    font-size: clamp(1.4rem, 3vw, 1.8rem);
-    margin-bottom: 15px;
-}
-
-body.portfolio-page .portfolio-description {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    line-height: 1.7;
-}
-
-/* Handy-Version */
-@media (max-width: 900px) {
-
-    body.portfolio-page .portfolio-item,
-    body.portfolio-page .portfolio-item-reverse {
-        flex-direction: column !important;
-        text-align: center;
-    }
-
-    body.portfolio-page .portfolio-image {
-        width: 180px;
-        height: 180px;
-    }
-
-    body.portfolio-page .portfolio-text {
-        width: 100%;
-        padding: 20px;
-    }
-}
-
-@media (max-width: 900px) {
-
-    .portfolio-item,
-    .portfolio-item-reverse {
-        flex-direction: column !important; /* Bild oben, Text unten */
-    }
-
-    .portfolio-image-wrapper {
-        order: 1; /* Bild zuerst */
-    }
-
-    .portfolio-text {
-        order: 2; /* Text danach */
-    }
+body.portfolio-page .about-title {
+    background-color: #fff;
+    color: #000;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0;
 }
 
 /* ---------------------------------------------------
-   KONTAKTSEITE – ALLES HELLBLAU
+   KONTAKTSEITE
 --------------------------------------------------- */
-
 body.contact-page {
-    background-color: #C8D8E4; /* Hellblau */
+    background-color: #C8D8E4;
 }
 
-
-
-/* Hauptlayout */
 body.contact-page .contact-layout {
     display: flex;
     justify-content: center;
@@ -617,116 +458,11 @@ body.contact-page .contact-layout {
     padding: 40px 60px;
 }
 
-/* Linke Kontaktinfos – HELLBLAU */
-body.contact-page .contact-info {
-    width: 35%;
-    background-color: #C8D8E4; /* Hellblau */
-    color: black;
-    padding: 30px;
-    border-radius: 12px;
-}
-
-body.contact-page .contact-info h2 {
-    margin-bottom: 5px;
-    font-weight: normal;
-}
-
-body.contact-page .contact-info p {
-    margin-bottom: 20px;
-}
-
-/* Formular – HELLBLAU */
-body.contact-page .contact-form {
-    width: 45%;
-    background-color: #C8D8E4; /* Hellblau */
-    padding: 30px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-body.contact-page .contact-form label {
-    font-weight: bold;
-}
-
-body.contact-page .contact-form input,
-body.contact-page .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 2px solid #2B6777;
-    font-size: 1rem;
-    background-color: white; /* Eingabefelder bleiben weiß */
-}
-
-body.contact-page .contact-form textarea {
-    height: 120px;
-    resize: none;
-}
-
-/* Button */
-body.contact-page .contact-form button {
-    margin-top: 10px;
-    padding: 15px 25px;
-    background-color: #2B6777;
-    color: white;
-    border: none;
-    border-radius: 50%; /* MACHT IHN RUND */
-    width: 120px;       /* Breite */
-    height: 120px;      /* Höhe */
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto; /* zentriert */
-}
-
-
-/* ---------------------------------------------------
-   MOBILE VERSION
---------------------------------------------------- */
-@media (max-width: 900px) {
-
-    body.contact-page .contact-layout {
-        flex-direction: column;
-        gap: 30px;
-        padding: 20px;
-    }
-
-    body.contact-page .contact-info,
-    body.contact-page .contact-form {
-        width: 100%;
-    }
-
-    body.contact-page .contact-info {
-        text-align: center;
-    }
-}
-
-
-/* Linke Kontaktinfos – ohne Box, nur Text */
 body.contact-page .contact-info {
     width: 35%;
     background-color: transparent;
-    color: #000000;
+    color: #000;
 }
-
-body.contact-page .contact-info h2 {
-    margin-bottom: 5px;
-    font-weight: normal;
-}
-
-body.contact-page .contact-info p {
-    margin-bottom: 20px;
-}
-
-/* ---------------------------------------------------
-   KONTAKTFORMULAR – 2 SPALTEN GRID
---------------------------------------------------- */
 
 body.contact-page .contact-form {
     width: 45%;
@@ -737,20 +473,16 @@ body.contact-page .contact-form {
     row-gap: 10px;
 }
 
-/* Labels */
 body.contact-page .contact-form label {
     font-weight: bold;
 }
 
-/* Inputs & Textarea */
 body.contact-page .contact-form input,
 body.contact-page .contact-form textarea {
     width: 100%;
     padding: 10px;
-    border-radius: 0px;
-    border: 2px solid #000000;
-    font-size: 1rem;
-    background-color: #ffffff;
+    border: 2px solid #000;
+    background-color: #fff;
 }
 
 body.contact-page .contact-form textarea {
@@ -758,105 +490,50 @@ body.contact-page .contact-form textarea {
     resize: none;
 }
 
-/* Grid-Positionen – genau deine gewünschte Anordnung */
+/* GRID POSITIONEN */
+body.contact-page label[for="vorname"] { grid-column: 1; grid-row: 1; }
+body.contact-page #vorname           { grid-column: 1; grid-row: 2; }
 
-/* Vorname oben links */
-body.contact-page label[for="vorname"] {
-    grid-column: 1;
-    grid-row: 1;
-}
-body.contact-page #vorname {
-    grid-column: 1;
-    grid-row: 2;
-}
+body.contact-page label[for="nachname"] { grid-column: 2; grid-row: 1; }
+body.contact-page #nachname             { grid-column: 2; grid-row: 2; }
 
-/* Nachname oben rechts */
-body.contact-page label[for="nachname"] {
-    grid-column: 2;
-    grid-row: 1;
-}
-body.contact-page #nachname {
-    grid-column: 2;
-    grid-row: 2;
-}
+body.contact-page label[for="email"] { grid-column: 1; grid-row: 3; }
+body.contact-page #email             { grid-column: 1; grid-row: 4; }
 
-/* E-Mail links in der zweiten Zeile */
-body.contact-page label[for="email"] {
-    grid-column: 1;
-    grid-row: 3;
-}
-body.contact-page #email {
-    grid-column: 1;
-    grid-row: 4;
-}
+body.contact-page label[for="betreff"] { grid-column: 2; grid-row: 3; }
+body.contact-page #betreff             { grid-column: 2; grid-row: 4; }
 
-/* Betreff rechts daneben */
-body.contact-page label[for="betreff"] {
-    grid-column: 2;
-    grid-row: 3;
-}
-body.contact-page #betreff {
-    grid-column: 2;
-    grid-row: 4;
-}
+body.contact-page label[for="nachricht"] { grid-column: 1; grid-row: 5; }
+body.contact-page #nachricht             { grid-column: 1; grid-row: 6; }
 
-/* Nachricht unten links */
-body.contact-page label[for="nachricht"] {
-    grid-column: 1;
-    grid-row: 5;
-}
-body.contact-page #nachricht {
-    grid-column: 1;
-    grid-row: 6;
-}
-
-/* Runder Button unten rechts neben Nachricht */
 body.contact-page .contact-form button {
     grid-column: 2;
     grid-row: 6;
     align-self: center;
     justify-self: center;
-
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: none;
     background-color: #2B6777;
-    color: #ffffff;
-    font-size: 1.1rem;
+    color: #fff;
+    border: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
 }
 
-body.contact-page .contact-form button:hover {
-    background-color: #225262;
-}
-
-/* ---------------------------------------------------
-   MOBILE VERSION KONTAKT
---------------------------------------------------- */
-
+/* MOBILE KONTAKT */
 @media (max-width: 900px) {
-
     body.contact-page .contact-layout {
         flex-direction: column;
-        gap: 30px;
-        padding: 20px;
+        gap: 20px;
+        padding: 10px 15px;
     }
 
     body.contact-page .contact-info,
     body.contact-page .contact-form {
         width: 100%;
+        padding: 10px;
     }
 
-    body.contact-page .contact-info {
-        text-align: center;
-    }
-
-    /* Formular auf Handy wieder untereinander */
     body.contact-page .contact-form {
         display: flex;
         flex-direction: column;
@@ -866,51 +543,20 @@ body.contact-page .contact-form button:hover {
         align-self: center;
         margin-top: 10px;
     }
+    body.contact-page .contact-info {
+        display: none !important;
+    }
 }
 
 /* ---------------------------------------------------
-   SKILLS-SEITE – TITEL HINTERGRUND WEISS FIX
+   FOOTER
 --------------------------------------------------- */
-
-body.skills-page .about-title-container {
-    background-color: #ffffff;
-}
-
-body.skills-page .about-title {
-    background-color: #ffffff;
-    color: #000000;
-}
-/* ---------------------------------------------------
-   PORTFOLIO-SEITE – TITEL HINTERGRUND WEISS FIX
---------------------------------------------------- */
-
-/* PORTFOLIO-SEITE – TITEL KOMPAKT & WEISS */
-body.portfolio-page .about-title-container {
-    background-color: #ffffff;
-    padding: 10px 0;      /* kleiner Abstand */
-    margin: 0 !important; /* entfernt den oberen Abstand */
-}
-
-body.portfolio-page .about-title {
-    background-color: #ffffff;
-    color: #000000;
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin: 0;
-    text-align: center;
-}
-
-/* ---------------------------------------------------
-   FOOTER – EINHEITLICH FÜR ALLE SEITEN
---------------------------------------------------- */
-
-/* DESKTOP */
 .footer {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 25px 40px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    align-items: center;      /* perfekte vertikale Ausrichtung */
-    text-align: center;       /* alles schön mittig */
+    text-align: center;
     gap: 10px;
 }
 
@@ -918,31 +564,18 @@ body.portfolio-page .about-title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;  /* perfekte vertikale Ausrichtung */
     gap: 5px;
 }
 
-.footer-section h1,
-.footer-section h2 {
-    margin: 0;
-    padding: 0;
-}
-
-/* Reihenfolge Desktop */
 .footer-section.telefon   { grid-column: 1; }
 .footer-section.email     { grid-column: 2; }
 .footer-section.linkedin  { grid-column: 3; }
 .footer-section.copyright { grid-column: 4; }
 
-/* ---------------------------------------------------
-   MOBILE
---------------------------------------------------- */
 @media (max-width: 900px) {
-
     .footer {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
-        text-align: center;
         gap: 15px;
     }
 
@@ -951,84 +584,20 @@ body.portfolio-page .about-title {
     .footer-section.email     { grid-column: 1; grid-row: 2; }
     .footer-section.copyright { grid-column: 2; grid-row: 2; }
 }
-@media (max-width: 900px) {
-    body.contact-page .about-title {
-        font-size: clamp(1.5rem, 6vw, 2.2rem);
-        padding: 10px 0;
-    }
+/* ---------------------------------------------------
+   WEISSER TITELBEREICH FÜR ALLE SEITEN
+--------------------------------------------------- */
 
-    body.contact-page .about-title-container {
-        padding: 10px 0;
-    }
-}
-@media (max-width: 900px) {
-    body.contact-page .contact-layout {
-        padding: 10px 15px;   /* viel schmaler */
-        gap: 20px;            /* weniger Abstand */
-    }
-
-    body.contact-page .contact-form,
-    body.contact-page .contact-info {
-        padding: 10px;        /* Boxen schmaler */
-    }
-}
-@media (max-width: 900px) {
-    body.contact-page .about-title {
-        font-size: clamp(1.5rem, 6vw, 2rem);
-    }
-
-    body.contact-page .about-title-container {
-        padding: 10px 0;
-    }
-}
-@media (max-width: 900px) {
-    body.contact-page .about-title-container {
-        padding: 8px 0;
-        background-color: #ffffff;
-    }
-
-    body.contact-page .about-title {
-        font-size: clamp(1.3rem, 5vw, 1.8rem);
-        margin: 0;
-        padding: 0;
-    }
-}
-/* Kontaktseite – Titel Desktop */
-body.contact-page .about-title-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 20px 0;
-    margin: 0;
-    width: 100%;
+/* Skills-Seite */
+body.skills-page .about-title-container,
+body.skills-page .about-title {
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
 
+/* Kontakt-Seite */
+body.contact-page .about-title-container,
 body.contact-page .about-title {
-    background-color: #ffffff;
-    color: #000000;
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin: 0;
-    text-align: center;
-}@media (max-width: 900px) {
-    body.contact-page .about-title-container {
-        padding: 8px 0 !important;
-    }
-
-    body.contact-page .about-title {
-        font-size: clamp(1.3rem, 5vw, 1.8rem) !important;
-        padding: 0;
-        margin: 0;
-    }
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
-@media (max-width: 900px) {
-    .about-text-container {
-        text-align: center !important;
-    }
-
-    .about-text {
-        white-space: normal !important;
-        text-align: center !important;
-    }
-}
-
