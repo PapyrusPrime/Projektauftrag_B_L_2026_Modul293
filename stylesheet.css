@@ -492,6 +492,7 @@ body.contact-page .contact-form textarea {
     resize: none;
 }
 
+
 /* GRID POSITIONEN */
 body.contact-page label[for="vorname"] { grid-column: 1; grid-row: 1; }
 body.contact-page #vorname           { grid-column: 1; grid-row: 2; }
@@ -649,11 +650,25 @@ body.contact-page .contact-layout {
     background-color: #C8D8E4;
 }
 html, body {
-    background-color: #ffffff !important;
+    background-color: #ffffff;
 }
-/* Titelsteuerung pro Seite */
+
 body.index-page .about-title-container {
-    display: none !important;
+    display: none;
+}
+@media (max-width: 900px) {
+    body.skills-page {
+        background: linear-gradient(
+            to right,
+            #C8D8E4 0%,
+            #C8D8E4 50%,
+            #2B6777 50%,
+            #2B6777 100%
+        ) !important;
+    }
+    body.skills-page {
+    background-color: #52AB98 !important;
+}
 }
 
 body.skills-page .about-title-container,
@@ -662,10 +677,7 @@ body.contact-page .about-title-container {
     display: block !important;
     text-align: center !important;
 }
-/* Index: Titel ausblenden */
-body.index-page .about-title-container {
-    display: none !important;
-}
+
 
 /* Kontakt: Titel zentrieren */
 body.contact-page .about-layout {
@@ -679,3 +691,6 @@ body.contact-page .about-title-container {
     display: block !important;
     text-align: center !important;
 }
+
+
+
