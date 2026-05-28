@@ -670,6 +670,14 @@ body.index-page .about-title-container {
     background-color: #52AB98 !important;
 }
 }
+.navigation-mobile {
+    background-color: #52AB98; /* oder dein Grün */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
 
 body.skills-page .about-title-container,
 body.portfolio-page .about-title-container,
