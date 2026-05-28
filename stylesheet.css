@@ -7,9 +7,19 @@
     padding: 0;
 }
 
+html,
 body {
     font-family: inter, sans-serif;
     font-size: clamp(1rem, 2vw, 1.3rem);
+    background-color: #52AB98; /* Mobile: gleich wie Navigation */
+}
+
+/* Desktop-Hintergrund */
+@media (min-width: 900px) {
+    html,
+    body {
+        background-color: #ffffff;
+    }
 }
 
 /* ---------------------------------------------------
@@ -49,7 +59,7 @@ body {
 .h1Navigation {
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-family: Papyrus, sans-serif;
-    color: black;
+    color: #000;
 }
 
 .navigation-desktop {
@@ -90,6 +100,9 @@ body {
         width: 100%;
         background-color: #52AB98;
         padding: 20px;
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
     }
 
     .navigation-mobile a {
@@ -104,7 +117,7 @@ body {
 }
 
 /* ---------------------------------------------------
-   ABOUT SECTION
+   ABOUT SECTION (Über mich)
 --------------------------------------------------- */
 .about-layout {
     display: flex;
@@ -112,7 +125,6 @@ body {
 }
 
 .about-title-container {
-    display: none;
     display: block;
     text-align: center;
 }
@@ -159,7 +171,6 @@ body {
     }
 
     .about-title-container {
-        display: block;
         padding: 0 !important;
     }
 
@@ -181,6 +192,15 @@ body {
         white-space: normal !important;
         text-align: center !important;
     }
+
+    /* Startseite: Titel auf Mobile nur dort anzeigen */
+    body.index-page .about-title-container {
+        display: none;
+    }
+
+    body.index-page .about-title-container {
+        display: block !important;
+    }
 }
 
 /* ---------------------------------------------------
@@ -190,6 +210,7 @@ body {
     display: flex;
     width: 100%;
     background-color: transparent;
+    position: relative;
 }
 
 .skills-left,
@@ -252,14 +273,22 @@ body {
         margin: 10px auto;
         padding: 12px 30px;
     }
+
+    /* Skills-Seite: trotzdem nebeneinander auf Handy */
+    body.skills-page .skills-layout {
+        flex-direction: row !important;
+    }
+
+    body.skills-page .skills-left,
+    body.skills-page .skills-right {
+        width: 50% !important;
+        padding: 20px 0 !important;
+    }
 }
+
 /* ---------------------------------------------------
    SKILLS – CENTER IMAGE
 --------------------------------------------------- */
-.skills-layout {
-    position: relative;
-}
-
 .skills-center {
     position: absolute;
     left: 50%;
@@ -320,29 +349,12 @@ body {
     opacity: 1;
 }
 
-
-
-/* SKILLS – Handy: trotzdem nebeneinander */
-@media (max-width: 900px) {
-    body.skills-page .skills-layout {
-        flex-direction: row !important;
-    }
-
-    body.skills-page .skills-left,
-    body.skills-page .skills-right {
-        width: 50% !important;
-        padding: 20px 0 !important;
-    }
-
-    body.skills-page .skills-center {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        margin: 0 !important;
-    }
+/* Skills: Titelbereich weiss auf allen Seiten, wo nötig */
+body.skills-page .about-title-container,
+body.skills-page .about-title {
+    background-color: #ffffff !important;
+    color: #000000 !important;
 }
-
 
 /* ---------------------------------------------------
    PORTFOLIO
@@ -421,9 +433,7 @@ body {
     }
 }
 
-/* ---------------------------------------------------
-   PORTFOLIO – SEITENSPEZIFISCH
---------------------------------------------------- */
+/* PORTFOLIO – SEITENSPEZIFISCH */
 body.portfolio-page .about-layout,
 body.portfolio-page .about-left,
 body.portfolio-page .about-text-container {
@@ -448,7 +458,6 @@ body.portfolio-page .about-title {
    KONTAKTSEITE
 --------------------------------------------------- */
 body.contact-page {
-    background-color: #C8D8E4;
     background-color: #ffffff;
 }
 
@@ -458,6 +467,7 @@ body.contact-page .contact-layout {
     align-items: flex-start;
     gap: 60px;
     padding: 40px 60px;
+    background-color: #C8D8E4;
 }
 
 body.contact-page .contact-info {
@@ -491,7 +501,6 @@ body.contact-page .contact-form textarea {
     height: 120px;
     resize: none;
 }
-
 
 /* GRID POSITIONEN */
 body.contact-page label[for="vorname"] { grid-column: 1; grid-row: 1; }
@@ -538,17 +547,31 @@ body.contact-page .contact-form button {
     }
 
     body.contact-page .contact-form {
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px;
     }
 
     body.contact-page .contact-form button {
         align-self: center;
         margin-top: 10px;
     }
+
     body.contact-page .contact-info {
         display: none !important;
     }
+}
+
+/* Kontakt: Titel zentrieren + weiss */
+body.contact-page .about-title-container,
+body.contact-page .about-title {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    text-align: center !important;
+}
+
+body.contact-page .about-layout {
+    justify-content: center !important;
 }
 
 /* ---------------------------------------------------
@@ -577,19 +600,6 @@ body.contact-page .contact-form button {
 
 @media (max-width: 900px) {
     .footer {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-        gap: 15px;
-    }
-
-    .footer-section.telefon   { grid-column: 1; grid-row: 1; }
-    .footer-section.linkedin  { grid-column: 2; grid-row: 1; }
-    .footer-section.email     { grid-column: 1; grid-row: 2; }
-    .footer-section.copyright { grid-column: 2; grid-row: 2; }
-}
-@media (max-width: 900px) {
-
-    .footer {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         text-align: center;
@@ -615,99 +625,32 @@ body.contact-page .contact-form button {
 }
 
 /* ---------------------------------------------------
-   WEISSER TITELBEREICH FÜR ALLE SEITEN
+   SEITENÜBERGREIFENDE TITELANZEIGE
 --------------------------------------------------- */
-
-/* Skills-Seite */
 body.skills-page .about-title-container,
-body.skills-page .about-title {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-}
-
-/* Kontakt-Seite */
-body.contact-page .about-title-container,
-body.contact-page .about-title {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-}
+body.portfolio-page .about-title-container,
 body.contact-page .about-title-container {
+    display: block !important;
     text-align: center !important;
 }
-
+/* MOBILE: Titel oben anzeigen */
 @media (max-width: 900px) {
-    body.contact-page .contact-form {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px;
+    .about-title-container {
+        display: block !important;
+    }
+    .TitelDesctop {
+        display: none !important;
     }
 }
-body.contact-page {
-    background-color: #ffffff;
-}
 
-body.contact-page .contact-layout {
-    background-color: #C8D8E4;
-}
-/* Standard: Mobile */
-html, body {
-    background-color: #52AB98; /* gleiche Farbe wie Navigation */
-}
-
-/* Desktop */
+/* DESKTOP: Titel im Textbereich anzeigen */
 @media (min-width: 900px) {
-    html, body {
-        background-color: #ffffff;
+    .about-title-container {
+        display: none !important;
+    }
+    .TitelDesctop {
+        display: block !important;
     }
 }
-
-
-body.index-page .about-title-container {
-    display: none;
-}
-@media (max-width: 900px) {
-    body.skills-page {
-        background: linear-gradient(
-            to right,
-            #C8D8E4 0%,
-            #C8D8E4 50%,
-            #2B6777 50%,
-            #2B6777 100%
-        ) !important;
-    }
-    body.skills-page {
-    background-color: #52AB98 !important;
-}
-}
-.navigation-mobile {
-    background-color: #52AB98; /* oder dein Grün */
-    width: 100%;
-     position: sticky;
-    bottom: 0;
-    z-index: 10;
-}
-
-
-body.skills-page .about-title-container,
-body.portfolio-page .about-title-container,
-body.contact-page .about-title-container {
-    display: block !important;
-    text-align: center !important;
-}
-
-
-/* Kontakt: Titel zentrieren */
-body.contact-page .about-layout {
-    justify-content: center !important;
-}
-
-/* Kontakt, Skills, Portfolio: Titel anzeigen */
-body.skills-page .about-title-container,
-body.portfolio-page .about-title-container,
-body.contact-page .about-title-container {
-    display: block !important;
-    text-align: center !important;
-}
-
 
 
