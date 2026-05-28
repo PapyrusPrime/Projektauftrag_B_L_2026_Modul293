@@ -1,6 +1,4 @@
-/* ---------------------------------------------------
-   GRUNDSTRUKTUR
---------------------------------------------------- */
+/*GRUNDSTRUKTUR */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,9 +20,7 @@ body {
     }
 }
 
-/* ---------------------------------------------------
-   HEADER
---------------------------------------------------- */
+/* HEADER*/
 .TitelDesctop {
     display: block;
 }
@@ -116,9 +112,7 @@ body {
     }
 }
 
-/* ---------------------------------------------------
-   ABOUT SECTION (Über mich)
---------------------------------------------------- */
+/* ABOUT SECTION (Über mich)*/
 .about-layout {
     display: flex;
     width: 100%;
@@ -203,9 +197,7 @@ body {
     }
 }
 
-/* ---------------------------------------------------
-   SKILLS – GRUNDSTRUKTUR
---------------------------------------------------- */
+/* SKILLS – GRUNDSTRUKTUR */
 .skills-layout {
     display: flex;
     width: 100%;
@@ -286,9 +278,7 @@ body {
     }
 }
 
-/* ---------------------------------------------------
-   SKILLS – CENTER IMAGE
---------------------------------------------------- */
+/*  SKILLS – CENTER IMAGE*/
 .skills-center {
     position: absolute;
     left: 50%;
@@ -356,9 +346,7 @@ body.skills-page .about-title {
     color: #000000 !important;
 }
 
-/* ---------------------------------------------------
-   PORTFOLIO
---------------------------------------------------- */
+/* PORTFOLIO*/
 .portfolio-layout {
     width: 100%;
     padding: 40px 60px;
@@ -598,21 +586,42 @@ body.contact-page .about-layout {
 .footer-section.linkedin  { grid-column: 3; }
 .footer-section.copyright { grid-column: 4; }
 
+/* MOBILE FOOTER – 2×2 GRID */
 @media (max-width: 900px) {
     .footer {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 Spalten */
+        grid-template-rows: auto auto; /* 2 Reihen */
+        gap: 15px;
         text-align: center;
-        gap: 10px;
         padding: 20px 10px;
     }
 
-    .footer-section {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
+    /* Oben links: Telefon */
+    .footer-section.telefon {
+        grid-column: 1;
+        grid-row: 1;
     }
 
+    /* Oben rechts: LinkedIn */
+    .footer-section.linkedin {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* Unten links: E-Mail */
+    .footer-section.email {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* Unten rechts: © 2026 */
+    .footer-section.copyright {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    /* Schriftgrössen anpassen */
     .footer-section h1,
     .footer-section h2 {
         font-size: clamp(0.9rem, 3.5vw, 1.1rem);
@@ -623,6 +632,7 @@ body.contact-page .about-layout {
         height: 40px;
     }
 }
+
 
 /* ---------------------------------------------------
    SEITENÜBERGREIFENDE TITELANZEIGE
