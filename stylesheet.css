@@ -649,9 +649,18 @@ body.contact-page {
 body.contact-page .contact-layout {
     background-color: #C8D8E4;
 }
+/* Standard: Mobile */
 html, body {
-    background-color: #ffffff;
+    background-color: #52AB98; /* gleiche Farbe wie Navigation */
 }
+
+/* Desktop */
+@media (min-width: 900px) {
+    html, body {
+        background-color: #ffffff;
+    }
+}
+
 
 body.index-page .about-title-container {
     display: none;
@@ -672,10 +681,10 @@ body.index-page .about-title-container {
 }
 .navigation-mobile {
     background-color: #52AB98; /* oder dein Grün */
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
+     position: sticky;
+    bottom: 0;
+    z-index: 10;
 }
 
 
